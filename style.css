@@ -9,3 +9,14 @@
 #output{
   background-color:pink;
 }
+
+select{
+  font-size: 20px;
+  margin: 10px;
+
+}
+
+button{
+  font-size: 20px;
+  padding: 10px;
+}
