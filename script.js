@@ -8,6 +8,30 @@ var convertFToK = function(fahrenheit) {
 
 
 var inputHappened = function(currentInput){
+
+
   console.log( currentInput );
-  display( convertFToK(currentInput) + " \xB0K" + " / " + convertFToC(currentInput) + " \xB0C"  );
+
+  var checkIfNumber = function(currentInput) {
+    if (!isNaN(currentInput)) {
+      console.log(currentInput + " is a number");
+      return true;
+    } else {
+      console.log(currentInput + " is not a number");
+      return false;
+    }
+  };
+
+  checkIfNumber(currentInput);
+  console.log(checkIfNumber(currentInput));
+
+  // var checkIfNumber = false;
+
+    if (checkIfNumber(currentInput) === true ){
+        console.log("test");
+        display( convertFToK(currentInput) + " \xB0K" + " / " + convertFToC(currentInput) + " \xB0C"  );
+    } else {
+        display( "Please enter the temperature in Fahrenheit");
+    }
+
 };
