@@ -1,9 +1,25 @@
 var convertFToC = function(fahrenheit) {
-    return Math.floor((fahrenheit - 32) * (5/9));
+    return ((fahrenheit - 32) * (5/9)).toFixed(2);
 };
 
 var convertFToK = function(fahrenheit) {
-    return Math.floor((fahrenheit - 32) * (5/9) + 273.5);
+    return ((fahrenheit - 32) * (5/9) + 273.5).toFixed(2);
+};
+
+var convertCToF = function(celsius) {
+    return ((celsius * (9/5)) + 32).toFixed(2);
+};
+
+var convertCToK = function(celsius) {
+    return (celsius + 273.15).toFixed(2);
+};
+
+var convertKToF = function(kelvin) {
+    return ((kelvin - 273.15) * (9/5) + 32).toFixed(2);
+};
+
+var convertKToC = function(kelvin) {
+    return (kelvin - 273.15).toFixed(2);
 };
 
 
