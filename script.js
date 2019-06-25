@@ -1,3 +1,4 @@
+
 var convertFToC = function(fahrenheit) {
     return ((fahrenheit - 32) * (5/9)).toFixed(2);
 };
@@ -26,28 +27,46 @@ var convertKToC = function(kelvin) {
 var inputHappened = function(currentInput){
 
 
-  console.log( currentInput );
+  // console.log( currentInput );
+
 
   var checkIfNumber = function(currentInput) {
     if (!isNaN(currentInput)) {
-      console.log(currentInput + " is a number");
+      // console.log(currentInput + " is a number");
       return true;
     } else {
-      console.log(currentInput + " is not a number");
+      // console.log(currentInput + " is not a number");
       return false;
     }
   };
 
   checkIfNumber(currentInput);
-  console.log(checkIfNumber(currentInput));
+  // console.log(checkIfNumber(currentInput));
 
-  // var checkIfNumber = false;
 
     if (checkIfNumber(currentInput) === true ){
-        console.log("test");
-        display( convertFToK(currentInput) + " \xB0K" + " / " + convertFToC(currentInput) + " \xB0C"  );
+        // console.log("test");
+        // display( convertFToK(currentInput) + " \xB0K" + " / " + convertFToC(currentInput) + " \xB0C"  );
+        var unit = document.getElementById('unit-selector');
+        currentInput = parseFloat(currentInput);
+        unit.addEventListener("change", function() {
+          if(unit.value === "fahrenheit"){
+            console.log("fahrenheit");
+            display( convertFToK(currentInput) + " \xB0K" + "/" + convertFToC(currentInput) + " \xB0C"  );
+          } else if(unit.value === "celsius"){
+            console.log("celsius");
+            display( convertCToK(currentInput) + " \xB0K" + "/" + convertCToF(currentInput) + " \xB0F"  );
+          } else if(unit.value === "kelvin"){
+            console.log("kelvin");
+            display( convertKToF(currentInput) + " \xB0F" + "/" + convertKToC(currentInput) + " \xB0C"  );
+          }
+        });
+
+        //if fahrenheit
+        //else if celsius
+        //else if kelvin
     } else {
-        display( "Please enter the temperature in Fahrenheit");
+        display( "Please enter a number");
     }
 
 };
