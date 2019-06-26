@@ -43,6 +43,17 @@ var inputHappened = function(currentInput){
   checkIfNumber(currentInput);
   // console.log(checkIfNumber(currentInput));
 
+  var displayMessage = function(tempInCelsius){
+    if (tempInCelsius<0){
+      console.log("ooh it's cold out");
+    } else if (tempInCelsius>0){
+      console.log("ooh it's hot out");
+    } else if (tempInCelsius>100){
+      console.log("you're literally boiling");
+    } else {
+      console.log("It's still ok.");
+    }
+  }
 
     if (checkIfNumber(currentInput) === true ){
         // console.log("test");
@@ -52,11 +63,11 @@ var inputHappened = function(currentInput){
         unit.addEventListener("change", function() {
           if(unit.value === "fahrenheit"){
             console.log("fahrenheit");
-            display( convertFToK(currentInput) + " \xB0K" + "/" + convertFToC(currentInput) + " \xB0C"  );
+            display( convertFToK(currentInput) + " K" + "/" + convertFToC(currentInput) + " \xB0C"  );
             console.log(convertFToC(currentInput));
           } else if(unit.value === "celsius"){
             console.log("celsius");
-            display( convertCToK(currentInput) + " \xB0K" + "/" + convertCToF(currentInput) + " \xB0F"  );
+            display( convertCToK(currentInput) + " K" + "/" + convertCToF(currentInput) + " \xB0F"  );
             console.log(currentInput);
           } else if(unit.value === "kelvin"){
             console.log("kelvin");
