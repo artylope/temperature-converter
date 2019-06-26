@@ -53,12 +53,15 @@ var inputHappened = function(currentInput){
           if(unit.value === "fahrenheit"){
             console.log("fahrenheit");
             display( convertFToK(currentInput) + " \xB0K" + "/" + convertFToC(currentInput) + " \xB0C"  );
+            console.log(convertFToC(currentInput));
           } else if(unit.value === "celsius"){
             console.log("celsius");
             display( convertCToK(currentInput) + " \xB0K" + "/" + convertCToF(currentInput) + " \xB0F"  );
+            console.log(currentInput);
           } else if(unit.value === "kelvin"){
             console.log("kelvin");
             display( convertKToF(currentInput) + " \xB0F" + "/" + convertKToC(currentInput) + " \xB0C"  );
+            console.log(convertKToC(currentInput));
           }
         });
 
